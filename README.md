@@ -13,6 +13,8 @@ In your `buddybuild_prebuild.sh` or `buddybuild_postbuild.sh` file, include the 
 ```bash
 #!/bin/bash
 
+set -e
+
 ruby ./myCustomScript.rb
 ```
 #### Sample myCustomScript.rb
@@ -28,5 +30,8 @@ APP_ID = "BUDDY_BUILD_APP_ID"
 BuddyBuild.trigger_build(APP_ID, "master")
 
 #Add whatever other logic you want
+
+#If you want the build to fail, uncomment next line
+#exit(1)
 
 ```
